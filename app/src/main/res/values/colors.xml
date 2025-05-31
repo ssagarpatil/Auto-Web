@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="primaryColor1">#F3D5D5</color>
+
+    <color name="primarryColor">#6200EE</color>
+    <color name="primaryDark">#3700B3</color>
+    <color name="secondaryText">#757575</color>
+<!--    <color name="white">#FFFFFF</color>-->
+
+
+
+
+        <!-- Primary Colors -->
+<!--        <color name="primaryColor">#6366F1</color>-->
+<!--        <color name="primaryColorDark">#4F46E5</color>-->
+        <color name="accentColor">#F59E0B</color>
+
+        <!-- Background Colors -->
+        <color name="background_gradient">#F8FAFC</color>
+        <color name="card_background">#FFFFFF</color>
+
+        <!-- Text Colors -->
+<!--        <color name="text_primary">#1F2937</color>-->
+<!--        <color name="text_secondary">#6B7280</color>-->
+
+        <!-- Gold and Rating Colors -->
+        <color name="gold">#FFD700</color>
+        <color name="gold_dark">#FFC107</color>
+
+        <!-- White Opacity Colors -->
+        <color name="white_70">#B3FFFFFF</color>
+        <color name="white_80">#CCFFFFFF</color>
+        <color name="white_90">#E6FFFFFF</color>
+        <color name="white_30">#4DFFFFFF</color>
+
+        <!-- Info Colors -->
+        <color name="info_blue">#3B82F6</color>
+        <color name="success_green">#10B981</color>
+        <color name="warning_orange">#F59E0B</color>
+        <color name="error_red">#EF4444</color>
+
+        <!-- Icon Background Colors -->
+        <color name="specialty_icon_bg">#FFF3CD</color>
+        <color name="products_icon_bg">#D1ECF1</color>
+        <color name="team_icon_bg">#D4EDDA</color>
+        <color name="gallery_icon_bg">#F8D7DA</color>
+        <color name="testimonial_icon_bg">#E2E3F3</color>
+        <color name="contact_icon_bg">#FCF4FF</color>
+        <color name="about_icon_bg">#E7F3FF</color>
+
+
+    <color name="navyblue">#18263c</color>
+    <!-- Primary Colors -->
+    <color name="primaryColor">#FF6B35</color>
+    <color name="primaryColorDark">#E55A2B</color>
+    <color name="primaryColorLight">#FFB347</color>
+
+    <!-- Background Colors -->
+    <color name="background_light">#F8FAFC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_alpha_90">#E6FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_tertiary">#94A3B8</color>
+
+    <!-- Icon Background Colors -->
+    <color name="specialty_bg">#FFF2E6</color>
+    <color name="specialty_icon">#FF6B35</color>
+
+    <color name="products_bg">#E8F5FF</color>
+    <color name="products_icon">#007BFF</color>
+
+    <color name="team_bg">#E6FFF0</color>
+    <color name="team_icon">#28A745</color>
+
+    <color name="gallery_bg">#FFF0F8</color>
+    <color name="gallery_icon">#E91E63</color>
+
+    <color name="testimonials_bg">#F0E6FF</color>
+    <color name="testimonials_icon">#9C27B0</color>
+
+    <color name="contact_bg">#FFE6E6</color>
+    <color name="contact_icon">#DC3545</color>
+
+    <color name="about_bg">#E6FFF2</color>
+    <color name="about_icon">#17A2B8</color>
+
+</resources>
