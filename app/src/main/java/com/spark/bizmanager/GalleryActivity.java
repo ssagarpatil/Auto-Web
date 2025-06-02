@@ -68,8 +68,11 @@ public class GalleryActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rec1);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-        imageAdapter = new ImageAdapter(this, imageList, (key, storagePath) -> {
-            deleteImageFromFirebase(key, storagePath);
+        imageAdapter = new ImageAdapter(this, imageList, new ImageAdapter.ImageDeleteListener() {
+            @Override
+            public void onImageDeleted(String key, String storagePath, OnDeletionCompleteListener listener) {
+                GalleryActivity.this.deleteImageFromFirebase(key, storagePath);
+            }
         });
 
         recyclerView.setAdapter(imageAdapter);

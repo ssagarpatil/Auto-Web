@@ -1,11 +1,13 @@
 package com.spark.bizmanager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -19,8 +21,15 @@ import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
 
+    // Updated interface to include success/failure callback
     public interface ImageDeleteListener {
-        void onImageDeleted(String key, String storagePath);
+        void onImageDeleted(String key, String storagePath, OnDeletionCompleteListener listener);
+
+        // Callback interface for deletion result
+        interface OnDeletionCompleteListener {
+            void onSuccess();
+            void onFailure(String error);
+        }
     }
 
     private Context context;
@@ -41,7 +50,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ImageViewHolder holder, @SuppressLint("RecyclerView") int position) {
         ImageModel model = imageList.get(position);
 
         Glide.with(context)
@@ -57,7 +66,22 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             builder.setMessage("Are you sure you want to delete this image?");
             builder.setPositiveButton("Delete", (dialog, which) -> {
                 if (deleteListener != null) {
-                    deleteListener.onImageDeleted(model.getKey(), model.getStoragePath());
+                    // Pass a callback to handle success/failure
+                    deleteListener.onImageDeleted(model.getKey(), model.getStoragePath(), new ImageDeleteListener.OnDeletionCompleteListener() {
+                        @Override
+                        public void onSuccess() {
+                            Toast.makeText(context, "Image deleted successfully", Toast.LENGTH_SHORT).show();
+                            // Optionally remove the item from the list and notify the adapter
+                            imageList.remove(position);
+                            notifyItemRemoved(position);
+                            notifyItemRangeChanged(position, imageList.size());
+                        }
+
+                        @Override
+                        public void onFailure(String error) {
+                            Toast.makeText(context, "Failed to delete image: " + error, Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             });
             builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
